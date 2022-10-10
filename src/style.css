@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Lato;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.App {
+  font-family: Lato;
+  min-height: 100vh;
+  background-color: #516282;
+  color: white;
+  padding-top: 130px;
+  padding-bottom: 70px;
+  padding-left: 7vw;
+  padding-right: 7vw;
+}
+
+@media (max-width: 700px) {
+  .App {
+    padding-top: 70px;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+}
+
+

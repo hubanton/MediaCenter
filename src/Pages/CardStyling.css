@@ -1,0 +1,8 @@
+.cardGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 16px;
+    column-gap: 16px;
+}
+
