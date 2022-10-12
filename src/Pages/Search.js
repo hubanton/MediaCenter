@@ -1,10 +1,11 @@
-import { Button, createTheme, TextField, ThemeProvider, Tabs, Tab } from "@mui/material"
-import { useState, useEffect } from "react"
+import { Button, TextField, ThemeProvider, Tabs, Tab } from "@mui/material"
+import { useState, useEffect, useContext } from "react"
 import { Search } from "@mui/icons-material"
 import moviedbClient from "../API/moviedb";
 import EmptyMsg from "../Components/EmptyMsg";
 import ContentCard from "../Components/ContentCard/ContentCard";
 import SitePagination from "../Components/SitePagination";
+import { ThemeContext } from "../ContextProvider/ThemeContextProvider"
 export default function SearchSite() {
 
     const [type, setType] = useState(0);
@@ -12,6 +13,10 @@ export default function SearchSite() {
     const [page, setPage] = useState(1);
     const [content, setContent] = useState([]);
     const [numPages, setNumPages] = useState();
+
+
+    const { darkTheme } = useContext(ThemeContext)
+
 
     function setSearch(input) {
         setSearchText(input)
@@ -50,12 +55,6 @@ export default function SearchSite() {
         // eslint-disable-next-line
     }, [type, page]);
 
-    const darkTheme = createTheme({
-        palette: {
-            mode: "dark"
-        }
-    })
-
     useEffect(() => {
         window.scroll(0, 0);
         fetchSearch();
@@ -66,14 +65,14 @@ export default function SearchSite() {
         <ThemeProvider theme={darkTheme}>
             <div style={{ display: "flex", margin: "15px 0" }}>
                 <TextField
-                    sx={{ flex: "1"}}
+                    sx={{ width: "70%", marginLeft: "auto"}}
                     className="searchBox"
                     label="Search"
                     variant="filled"
                     onChange={e => { setSearch(e.target.value) }}
                 />
                 <Button
-                    sx={{ marginLeft: "10px" }}
+                    sx={{ marginLeft: "10px", marginRight: "auto" }}
                     onClick={fetchSearch}
                     variant="contained"
                 >
@@ -87,8 +86,8 @@ export default function SearchSite() {
                 value={type}
                 textColor="primary"
             >
-                <Tab sx={{ width: "50%" }} label="Search Movies" onClick={() => {setType(0)}} />
-                <Tab sx={{ width: "50%" }} label="Search Shows" onClick={() => {setType(1)}}/>
+                <Tab sx={{ width: "50%", fontSize: "20px", fontWeight: "bolder" }} label="Search Movies" onClick={() => {setType(0)}} />
+                <Tab sx={{ width: "50%", fontSize: "20px", fontWeight: "bolder"  }} label="Search Shows" onClick={() => {setType(1)}}/>
             </Tabs>
         </ThemeProvider>
         <div className="cardGrid">

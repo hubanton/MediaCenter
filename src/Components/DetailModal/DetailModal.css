@@ -8,7 +8,6 @@
 .ContentModal__portrait {
   display: none;
   object-fit: contain;
-  border-radius: 10px;
 }
 
 .tagline {

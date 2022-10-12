@@ -4,24 +4,25 @@ import BottomNav from "./Components/BottomNav.js";
 import Trending from "./Pages/Trending.js";
 import Movies from "./Pages/Movies.js";
 import Tv from "./Pages/Tv.js";
-import About from "./Pages/About.js";
 import SearchSite from "./Pages/Search.js";
+import ThemeContextProvider from "./ContextProvider/ThemeContextProvider.js";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Trending/>}/>
-          <Route path="/movies" element={<Movies/>}/>
-          <Route path="/series" element={<Tv/>}/>
-          <Route path="/search" element={<SearchSite/>}/>
-          <Route path="/about" element={<About/>}/>
-        </Routes>
-      </div>
-      <BottomNav/>
-    </BrowserRouter>
+    <ThemeContextProvider>
+      <BrowserRouter>
+        <Header />
+        <div className="App">
+          <Routes>
+            <Route path="/MovieHub" element={<Trending />} />
+            <Route path="/MovieHub/movies" element={<Movies />} />
+            <Route path="/MovieHub/series" element={<Tv />} />
+            <Route path="/MovieHub/search" element={<SearchSite />} />
+          </Routes>
+        </div>
+        <BottomNav />
+      </BrowserRouter>
+    </ThemeContextProvider>
   );
 }
 

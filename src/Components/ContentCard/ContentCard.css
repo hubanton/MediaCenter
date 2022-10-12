@@ -7,7 +7,6 @@
     background-color: #282c34;
     border-radius: 10px;
     position: relative;
-    font-family: "Montserrat", sans-serif;
     height: 95%;
   }
   
@@ -38,7 +37,7 @@
     display: flex;
     margin-top: auto;
     justify-content: space-between;
-    padding-bottom: 3px;
-    padding: 0 2px;
+    padding: 2px 2px;
+    padding-bottom: 6px;
     text-transform: capitalize;
   }

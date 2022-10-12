@@ -17,7 +17,11 @@ export default function Genres(props) {
 
     function handleRemove(genre) {
         setGenres(oldGenres => {
-            return [...oldGenres, genre]
+            // Lexicographically sorts the array upon change for neater display
+            let genreList = [...oldGenres, genre].sort(function (a, b) {
+                return a.name.localeCompare(b.name);
+            });
+            return genreList
         })
         setSelectedGenres(oldGenres => {
             return oldGenres.filter(e => e.id !== genre.id)
@@ -33,7 +37,6 @@ export default function Genres(props) {
                 if (isMounted) {
                     setGenres(data.genres)
                 }
-                console.log(data.genres)
             } catch (err) {
                 console.log(err)
             }
@@ -46,24 +49,27 @@ export default function Genres(props) {
 
 
 
-    return <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "10px", marginBottom: "20px" }}>
-        {selectedGenres &&
-        
-        selectedGenres.map(item => <Chip
-            label={item.name}
-            sx={{fontWeight: "bolder" }}
-            clickable
-            color="primary"
-            key={item.id}
-            onDelete={() => {handleRemove(item)}}
-        />)}
-        
-        {genres && genres.map(item => <Chip
-            label={item.name}
-            sx={{ bgcolor: "#505050", color: "white", fontWeight: "bolder" }}
-            clickable
-            key={item.id}
-            onClick={() => {handleAdd(item)}}
-        />)}
+    return <div style={{ display: "flex", justifyContent: "center", flexDirection: "column"}}>
+        <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "10px", marginBottom: "20px" }}>
+            {genres && genres.map(item => <Chip
+                label={item.name}
+                sx={{ bgcolor: "#505050", color: "white", fontWeight: "bolder" }}
+                clickable
+                key={item.id}
+                onClick={() => { handleAdd(item) }}
+            />)}
+        </div>
+        <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "10px", marginBottom: "20px" }}>
+            {selectedGenres &&
+
+                selectedGenres.map(item => <Chip
+                    label={item.name}
+                    sx={{ fontWeight: "bolder", fontSize: "20px" }}
+                    clickable
+                    color="primary"
+                    key={item.id}
+                    onDelete={() => { handleRemove(item) }}
+                />)}
+        </div>
     </div>
 }
