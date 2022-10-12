@@ -8,4 +8,4 @@ Components like Chips, the Navbar etc. were created using MUI tools (https://mui
 
 Interactive Carousel Bar was provided by maxmarinich (https://github.com/maxmarinich/react-alice-carousel)
 
-# The deployed app can be found here: https://hubanton.github.io/MovieHub
+# The deployed app can be found here: https://hubanton.github.io/MediaCenter
