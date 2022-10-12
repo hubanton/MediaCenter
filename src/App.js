@@ -14,10 +14,10 @@ function App() {
         <Header />
         <div className="App">
           <Routes>
-            <Route path="/MovieHub" element={<Trending />} />
-            <Route path="/MovieHub/movies" element={<Movies />} />
-            <Route path="/MovieHub/series" element={<Tv />} />
-            <Route path="/MovieHub/search" element={<SearchSite />} />
+            <Route path="/MediaCenter" element={<Trending />} />
+            <Route path="/MediaCenter/movies" element={<Movies />} />
+            <Route path="/MediaCenter/series" element={<Tv />} />
+            <Route path="/MediaCenter/search" element={<SearchSite />} />
           </Routes>
         </div>
         <BottomNav />

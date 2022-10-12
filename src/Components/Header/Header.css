@@ -1,3 +1,5 @@
+
+
 .header {
     width: 100%;
     position: fixed;
@@ -6,6 +8,7 @@
     align-items: center;
     background-color: #39445a;
     font-size: 1.5vw;
+    font-family: Alfa Slab One;
     padding-bottom: 5px;
     padding-top: 5px;
     box-shadow: 0px 2px 12px #000000;
@@ -16,7 +19,7 @@
 .header span {
     font-size: 3vw;
     color: greenyellow;
-    text-transform: uppercase;
+    text-transform: capitalize;
     cursor: pointer;
 }
 

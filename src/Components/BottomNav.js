@@ -20,13 +20,13 @@ export default function BottomNav() {
     useEffect(() => {
         window.scroll(0, 0)
         if (value === 0) {
-            navigate("/MovieHub");
+            navigate("/MediaCenter");
         } else if (value === 1) {
-            navigate("MovieHub/movies");
+            navigate("MediaCenter/movies");
         } else if (value === 2) {
-            navigate("MovieHub/series");
+            navigate("MediaCenter/series");
         } else if (value === 3) {
-            navigate("MovieHub/search");
+            navigate("MediaCenter/search");
         }
     }, [value, navigate]);
 

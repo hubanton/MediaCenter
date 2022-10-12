@@ -1,7 +1,7 @@
 {
   "name": "movie-hub",
   "version": "0.1.0",
-  "homepage": "https://hubanton.github.io/MovieHub",
+  "homepage": "https://hubanton.github.io/MediaCenter",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",

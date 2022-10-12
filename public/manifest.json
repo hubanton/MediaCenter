@@ -1,6 +1,6 @@
 {
-  "short_name": "Cinema Hub",
-  "name": "Cinema Hub",
+  "short_name": "MediaCenter",
+  "name": "MediaCenter",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
