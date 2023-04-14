@@ -2,7 +2,7 @@ React-based Web Application for Browsing the Database of Movies and TV-Shows pro
 
 The project was bootstraped with the Create React App (https://github.com/facebook/create-react-app) 
 
-All Media is tacken from the themoviedb API (https://developers.themoviedb.org/3).
+All Media is taken from the themoviedb API (https://developers.themoviedb.org/3).
 
 Components like Chips, the Navbar etc. were created using MUI tools (https://mui.com/)
 
